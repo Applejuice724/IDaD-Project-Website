@@ -98,8 +98,8 @@ On your own branch you can do whatever you want but beware that messing with com
 Commits should be formatted according to the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. Basically the commit title describes the one thing you have done of a type (usually feat or fix), with an exclamation mark and footer for breaking changes, and an optional scope (what part of the project the thing is relevant to).
 
 Example:
+    
     feat(auth): add user login system
-
     Implemented login form with validation and connected it to backend API.
 
 
