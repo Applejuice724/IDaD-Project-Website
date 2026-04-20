@@ -37,13 +37,14 @@ Naming conventions:
 Files are organised according to Vue best practices, grouping components, views, and services by responsibility.
 
 src/
-│── components/        # Reusable Vue components
-│── views/             # Page-level components
-│── router/            # Vue Router configuration
-│── services/          # API calls
-│── assets/            # Static assets
-│── tests/             # For unit testing
 
+    │── components/        # Reusable Vue components
+    │── views/             # Page-level components
+    │── router/            # Vue Router configuration
+    │── services/          # API calls
+    │── assets/            # Static assets
+    │── tests/             # For unit testing
+    
 ## Git
 
 ### Usage
