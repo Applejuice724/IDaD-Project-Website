@@ -10,7 +10,7 @@ import logo from '@/assets/header-logo.png'
                 <img :src="logo" alt="Logo" style="width: 100px;" />
                 <h1 class="m-0">Card shop</h1>
             </div>
-
+            
             <!-- navigation -->
             <div class="col-12 col-md-4">
                 <ul class="nav justify-content-center justify-content-md-start gap-3">
