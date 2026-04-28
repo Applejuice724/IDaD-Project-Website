@@ -14,10 +14,10 @@ import logo from '@/assets/header-logo.png'
             <!-- navigation -->
             <div class="col-12 col-md-4">
                 <ul class="nav justify-content-center justify-content-md-start gap-3">
-                    <li class="nav-item"><a class="nav-link p-0" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link p-0" href="#">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link p-0" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link p-0" href="#">Contact</a></li>
+                    <li class="nav-item"><router-link class="nav-link p-0" to="/">Home</router-link></li>
+                    <li class="nav-item"><router-link class="nav-link p-0" to="/shop">Shop</router-link></li>
+                    <li class="nav-item"><router-link class="nav-link p-0" to="/about">About</router-link></li>
+                    <li class="nav-item"><router-link class="nav-link p-0" to="/contact">Contact</router-link></li>
                 </ul>
             </div>
 
