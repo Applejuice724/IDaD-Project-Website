@@ -18,6 +18,7 @@ import logo from '@/assets/header-logo.png'
                     <li class="nav-item"><router-link class="nav-link p-0" to="/Catalogue">Catalogue</router-link></li>
                     <li class="nav-item"><router-link class="nav-link p-0" to="/about">About</router-link></li>
                     <li class="nav-item"><router-link class="nav-link p-0" to="/contact">Contact</router-link></li>
+                    <li class="nav-item"><router-link class="nav-link p-0" to="/loginregister">Login/Register</router-link></li>
                 </ul>
             </div>
 
