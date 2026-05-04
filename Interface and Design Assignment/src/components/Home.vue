@@ -1,3 +1,8 @@
+<script setup>
+import HomeCarousel from './Home_components/Home_Carousel.vue'
+</script>
+
 <template>
-    <p> Home template</p>
+  <HomeCarousel/>
+  
 </template>
