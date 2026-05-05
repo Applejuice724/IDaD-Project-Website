@@ -17,8 +17,6 @@ import { globals } from '@/composables/globals'
                 <ul class="nav justify-content-center justify-content-md-start gap-3">
                     <li class="nav-item"><router-link class="nav-link p-0" to="/">Home</router-link></li>
                     <li class="nav-item"><router-link class="nav-link p-0" to="/Catalogue">Catalogue</router-link></li>
-                    <li class="nav-item"><router-link class="nav-link p-0" to="/about">About</router-link></li>
-                    <li class="nav-item"><router-link class="nav-link p-0" to="/contact">Contact</router-link></li>
                     <li class="nav-item"><router-link class="nav-link p-0" to="/loginregister">Login/Register</router-link></li>
                 </ul>
             </div>
