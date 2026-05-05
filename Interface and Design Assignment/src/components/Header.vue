@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import logo from '@/assets/header-logo.png'
+import { globals } from '@/composables/globals'
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import logo from '@/assets/header-logo.png'
             <!-- logo -->
             <div class="col-12 col-md-4 d-flex align-items-center gap-2">
                 <img :src="logo" alt="Logo" style="width: 100px;" />
-                <h1 class="m-0">Card Catalogue</h1>
+                <h1 class="m-0">{{ globals.websiteName }}</h1>
             </div>
             
             <!-- navigation -->
