@@ -10,6 +10,7 @@
                     <h5 class="mb-3">{{ globals.websiteName }}</h5>
                     <ul class="list-unstyled">
                         <li><a href="/about" class="text-decoration-none text-muted">About Us</a></li>
+                        <li><a href="/events" class="text-decoration-none text-muted">Events</a></li>
                         <li><a href="/contact" class="text-decoration-none text-muted">Contact</a></li>
                     </ul>
                 </div>
