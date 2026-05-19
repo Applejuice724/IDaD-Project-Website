@@ -13,6 +13,7 @@ import RegisterView from './views/RegisterView.vue'
 import CardDetail   from './views/CardDetailView.vue'
 import Dashboard    from './views/DashboardView.vue'
 import Profile      from './views/ProfileView.vue'
+import Guides       from './views/GuidesView.vue'
 
 const routes = [
   { path: '/',            name: 'Home',         component: Home },
@@ -21,6 +22,7 @@ const routes = [
   { path: '/contact',     name: 'Contact',      component: Contact },
   { path: '/events',      name: 'Events',       component: Events },
   { path: '/events/:id',  name: 'EventDetail',  component: EventDetail },
+  { path: '/guides',      name: 'Guides',       component: Guides },
   { path: '/login',       name: 'Login',        component: LoginView,    meta: { guestOnly: true } },
   { path: '/register',    name: 'Register',     component: RegisterView, meta: { guestOnly: true } },
   { path: '/dashboard',   name: 'Dashboard',    component: Dashboard,    meta: { requiresAuth: true } },
