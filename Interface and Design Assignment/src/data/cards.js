@@ -12,7 +12,7 @@ export const cards = [
         atk: 2500,
         def: 2100,
         description: 'The ultimate wizard in terms of attack and defense.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/46986414.jpg',
         dateAdded: '2026-05-07',
         popularity: 85,
         route: '/card/1'
@@ -27,7 +27,7 @@ export const cards = [
         atk: 3000,
         def: 2500,
         description: 'A legendary dragon that is a powerful engine of destruction.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/89631139.jpg',
         dateAdded: '2026-05-06',
         popularity: 95,
         route: '/card/2'
@@ -42,7 +42,7 @@ export const cards = [
         atk: 2400,
         def: 2000,
         description: 'A dragon with pitch-black scales that swallows up the opponent.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/74677422.jpg',
         dateAdded: '2026-05-05',
         popularity: 88,
         route: '/card/3'
@@ -57,7 +57,7 @@ export const cards = [
         atk: null,
         def: null,
         description: 'Destroy all monsters your opponent controls.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/12580477.jpg',
         dateAdded: '2026-05-04',
         popularity: 92,
         route: '/card/4'
@@ -72,7 +72,7 @@ export const cards = [
         atk: 1000,
         def: 1000,
         description: 'A forbidden one with the power to obliterate anyone who gazes upon it.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/33396948.jpg',
         dateAdded: '2026-05-03',
         popularity: 98,
         route: '/card/5'
@@ -87,7 +87,7 @@ export const cards = [
         atk: 2000,
         def: 1700,
         description: 'A cute little spellcaster with powerful magic.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/38033121.jpg',
         dateAdded: '2026-05-02',
         popularity: 95,
         route: '/card/6'
@@ -102,7 +102,7 @@ export const cards = [
         atk: null,
         def: null,
         description: 'When an opponent\'s monster declares an attack: Destroy all attack position monsters that opponent controls.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/44095762.jpg',
         dateAdded: '2026-05-01',
         popularity: 92,
         route: '/card/7'
@@ -117,7 +117,7 @@ export const cards = [
         atk: null,
         def: null,
         description: 'Draw 2 cards from your deck.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/55144522.jpg',
         dateAdded: '2026-04-30',
         popularity: 90,
         route: '/card/8'
@@ -132,7 +132,7 @@ export const cards = [
         atk: 300,
         def: 200,
         description: 'A cute furry monster with a powerful secret.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/40640057.jpg',
         dateAdded: '2026-04-29',
         popularity: 87,
         route: '/card/9'
@@ -147,7 +147,7 @@ export const cards = [
         atk: null,
         def: null,
         description: 'Special Summon 1 monster from either GY to your field.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/83764718.jpg',
         dateAdded: '2026-04-28',
         popularity: 94,
         route: '/card/10'
@@ -162,7 +162,7 @@ export const cards = [
         atk: 2400,
         def: 2000,
         description: 'Gains 300 ATK for each Dragon monster in your GY.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/96561011.jpg',
         dateAdded: '2026-04-27',
         popularity: 82,
         route: '/card/11'
@@ -177,7 +177,7 @@ export const cards = [
         atk: null,
         def: null,
         description: 'Negate the activation of a Spell/Trap card or a monster effect.',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://images.ygoprodeck.com/images/cards/41420027.jpg',
         dateAdded: '2026-04-26',
         popularity: 89,
         route: '/card/12'
