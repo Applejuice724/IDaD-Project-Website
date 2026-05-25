@@ -25,7 +25,7 @@ export const cards = [
             popularity: 95
         },
 
-        route: '/card/1'
+        route: '/cards/1'
     },
 
     {
@@ -50,7 +50,7 @@ export const cards = [
             popularity: 92
         },
 
-        route: '/card/2'
+        route: '/cards/2'
     },
 
     {
@@ -75,7 +75,7 @@ export const cards = [
             popularity: 84
         },
 
-        route: '/card/3'
+        route: '/cards/3'
     },
 
     {
@@ -100,7 +100,7 @@ export const cards = [
             popularity: 90
         },
 
-        route: '/card/4'
+        route: '/cards/4'
     },
 
     {
@@ -125,7 +125,7 @@ export const cards = [
             popularity: 80
         },
 
-        route: '/card/5'
+        route: '/cards/5'
     },
 
     {
@@ -146,7 +146,7 @@ export const cards = [
             popularity: 96
         },
 
-        route: '/card/6'
+        route: '/cards/6'
     },
 
     {
@@ -167,7 +167,7 @@ export const cards = [
             popularity: 93
         },
 
-        route: '/card/7'
+        route: '/cards/7'
     },
 
     {
@@ -188,7 +188,7 @@ export const cards = [
             popularity: 81
         },
 
-        route: '/card/8'
+        route: '/cards/8'
     },
 
     {
@@ -209,7 +209,7 @@ export const cards = [
             popularity: 75
         },
 
-        route: '/card/9'
+        route: '/cards/9'
     },
 
     {
@@ -230,7 +230,7 @@ export const cards = [
             popularity: 97
         },
 
-        route: '/card/10'
+        route: '/cards/10'
     },
 
     {
@@ -251,7 +251,7 @@ export const cards = [
             popularity: 94
         },
 
-        route: '/card/11'
+        route: '/cards/11'
     },
 
     {
@@ -272,7 +272,7 @@ export const cards = [
             popularity: 91
         },
 
-        route: '/card/12'
+        route: '/cards/12'
     },
 
     {
@@ -293,7 +293,7 @@ export const cards = [
             popularity: 93
         },
 
-        route: '/card/13'
+        route: '/cards/13'
     },
 
     {
@@ -314,7 +314,7 @@ export const cards = [
             popularity: 90
         },
 
-        route: '/card/14'
+        route: '/cards/14'
     },
 
     {
@@ -335,7 +335,7 @@ export const cards = [
             popularity: 88
         },
 
-        route: '/card/15'
+        route: '/cards/15'
     },
 
     // =========================
@@ -364,7 +364,7 @@ export const cards = [
             popularity: 89
         },
 
-        route: '/card/16'
+        route: '/cards/16'
     },
 
     {
@@ -389,7 +389,7 @@ export const cards = [
             popularity: 85
         },
 
-        route: '/card/17'
+        route: '/cards/17'
     },
 
     {
@@ -414,7 +414,7 @@ export const cards = [
             popularity: 79
         },
 
-        route: '/card/18'
+        route: '/cards/18'
     },
 
     {
@@ -438,7 +438,7 @@ export const cards = [
             popularity: 74
         },
 
-        route: '/card/19'
+        route: '/cards/19'
     },
 
     {
@@ -462,7 +462,7 @@ export const cards = [
             popularity: 87
         },
 
-        route: '/card/20'
+        route: '/cards/20'
     },
 
     // =========================
@@ -485,7 +485,7 @@ export const cards = [
             dateAdded: '2026-05-08',
             popularity: 99
         },
-        route: '/card/101'
+        route: '/cards/101'
     },
 
     // =========================
@@ -508,7 +508,7 @@ export const cards = [
             dateAdded: '2026-05-10',
             popularity: 94
         },
-        route: '/card/201'
+        route: '/cards/201'
     },
 
     // =========================
@@ -530,6 +530,6 @@ export const cards = [
             dateAdded: '2026-05-12',
             popularity: 100
         },
-        route: '/card/301'
+        route: '/cards/301'
     }
 ]
