@@ -15,6 +15,8 @@ import Dashboard    from './views/DashboardView.vue'
 import Profile      from './views/ProfileView.vue'
 import Guides       from './views/GuidesView.vue'
 
+import NewsCardView from './views/NewsCardView.vue'
+import NewsStoryView from './views/NewsStoryView.vue'
 const routes = [
   { path: '/',            name: 'Home',         component: Home },
   { path: '/about',       name: 'About',        component: About },
@@ -28,6 +30,8 @@ const routes = [
   { path: '/dashboard',   name: 'Dashboard',    component: Dashboard,    meta: { requiresAuth: true } },
   { path: '/cards/:id',   name: 'CardDetail',   component: CardDetail },
   { path: '/profile/:id', name: 'Profile',      component: Profile },
+  { path: '/news',        name: 'News',         component: NewsCardView},
+  { path: '/news/:slug',  name: 'NewsStory',    component: NewsStoryView }
 ]
 
 const router = createRouter({
