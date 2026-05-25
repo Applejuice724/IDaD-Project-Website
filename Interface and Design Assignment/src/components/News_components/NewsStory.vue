@@ -21,10 +21,7 @@ defineProps({
                 <router-link v-for="tag in newsItem.tags" :key="tag" :to="`/news/?tags=${tag}`" class=" bg-primary text-decoration-none mb-1 rounded p-1 text-light me-2">{{ tag }}</router-link>
             </div>
         </div>
-        
-        
     </div>
-    
     
     <br>
     <p>{{ newsItem.content }}</p>

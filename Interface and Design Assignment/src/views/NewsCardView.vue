@@ -37,7 +37,13 @@
         </div>
         
         <div class="row justify-content-center">
-            <NewsCard v-for="newsItem in newsItems" :key="newsItem.slug" :newsItem="newsItem" class="col-md-3"/>
+            <div class="col-md-3" v-for="newsItem in newsItems" :key="newsItem.slug">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <NewsCard :newsItem="newsItem"/>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </main>
