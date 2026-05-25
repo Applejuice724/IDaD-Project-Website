@@ -3,11 +3,8 @@ import { computed } from 'vue'
 /**
  * Provides zone-level deck manipulation helpers for a reactive deck ref.
  *
- * Each function works against the same `deck` ref and respects the provided
- * `rules` object, making it reusable across any game.
- *
  * @param {import('vue').Ref<{ id: string, name: string, game: string, zones: Array<{ name: string, min?: number, max?: number, cards: Array }> }>} deck
- * @param {{ maxCopies: number }} rules
+ * @param {import('vue').Ref<{ maxCopies: number }>} rules
  */
 export function useDeckHelpers(
   deck,
@@ -75,7 +72,7 @@ export function useDeckHelpers(
       getCardCount(card.id)
 
     if (
-      existingCopies >= rules.maxCopies
+      existingCopies >= rules.value.maxCopies
     ) {
       return false
     }
