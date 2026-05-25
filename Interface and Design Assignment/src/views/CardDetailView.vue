@@ -94,6 +94,7 @@ import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import { getCard, toggleLike, postComment, deleteComment, deleteCard, toggleCollection } from '../api'
+import { cards } from '../data/cards'
 
 const route = useRoute()
 const router = useRouter()
@@ -109,7 +110,23 @@ async function fetchCard() {
   try {
     const { data } = await getCard(route.params.id)
     card.value = data
-  } catch { error.value = 'Card not found.' }
+  } catch {
+    // Fallback to local data if Supabase fails
+    const localCard = cards.find(c => String(c.id) === String(route.params.id))
+    if (localCard) {
+      card.value = {
+        ...localCard,
+        image_url: localCard.image,
+        card_type: localCard.type,
+        attack: localCard.atk,
+        comments: [],
+        like_count: localCard.popularity || 0,
+        liked: false
+      }
+    } else {
+      error.value = 'Card not found.'
+    }
+  }
   finally { loading.value = false }
 }
 async function handleLike() {
