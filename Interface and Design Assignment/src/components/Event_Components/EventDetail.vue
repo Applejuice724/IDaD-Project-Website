@@ -1,13 +1,13 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { articles } from '../../data/articles.js'
+import { events } from '../../data/events.js'
 
 const route = useRoute()
 const router = useRouter()
 
-const article = computed(() => {
-  return articles.find(a => a.id === Number(route.params.id))
+const event = computed(() => {
+  return events.find(e => e.id === Number(route.params.id))
 })
 
 const goBack = () => {
@@ -16,28 +16,29 @@ const goBack = () => {
 </script>
 
 <template>
-  <div class="detail-page" v-if="article">
+  <div class="detail-page" v-if="event">
     <button class="back-btn" @click="goBack">&larr; Back to Events</button>
 
     <div class="detail-card">
-      <img :src="article.image" :alt="article.title" class="detail-image" />
+      <img :src="event.image" :alt="event.title" class="detail-image" />
 
       <div class="detail-body">
         <div class="detail-meta">
-          <span class="detail-category">{{ article.category }}</span>
-          <span class="detail-date">{{ article.date }}</span>
+          <span class="detail-category">{{ event.category }}</span>
+          <span class="detail-date">Starts {{ event.date }}</span>
+          <span class="detail-date">Published {{ event.published }}</span>
         </div>
 
-        <h1 class="detail-title">{{ article.title }}</h1>
-        <p class="detail-author">By {{ article.author }}</p>
+        <h1 class="detail-title">{{ event.title }}</h1>
+        <p class="detail-author">{{ event.location }}</p>
 
-        <div class="detail-content">{{ article.content }}</div>
+        <div class="detail-content">{{ event.content }}</div>
       </div>
     </div>
   </div>
 
   <div class="detail-page detail-page--empty" v-else>
-    <p>Article not found.</p>
+    <p>Event not found.</p>
     <button class="back-btn" @click="goBack">&larr; Back to Events</button>
   </div>
 </template>

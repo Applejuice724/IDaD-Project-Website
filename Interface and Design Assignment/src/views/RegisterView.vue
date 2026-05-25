@@ -88,10 +88,10 @@ async function handleRegister() {
   loading.value = true
   error.value = null
   try {
-    await auth.register(form)
+    await auth.register({ ...form, firstName: form.username, lastName: form.username })
     router.push({ name: 'Dashboard' })
   } catch (e) {
-    error.value = e.response?.data?.error || 'Registration failed. Please try again.'
+    error.value = e.message || 'Registration failed. Please try again.'
   } finally {
     loading.value = false
   }

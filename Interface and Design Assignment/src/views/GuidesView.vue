@@ -50,7 +50,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { articles } from '../data/articles'
+import { articles } from '../data/guides'
 
 const activeCategory = ref('All')
 const selectedArticle = ref(null)

@@ -1,36 +1,46 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import axios from 'axios'
-
-const API = 'http://localhost:3000/api'
+import { supabase } from '../supabase'
 
 export const useAuthStore = defineStore('auth', () => {
-  const token = ref(localStorage.getItem('cv_token') || null)
-  const user  = ref(JSON.parse(localStorage.getItem('cv_user') || 'null'))
-  const isLoggedIn = computed(() => !!token.value)
+  const user = ref(null)
+  const isLoggedIn = computed(() => !!user.value)
 
-  async function login(credentials) {
-    const { data } = await axios.post(`${API}/auth/login`, credentials)
-    token.value = data.token
-    user.value  = data.user
-    localStorage.setItem('cv_token', data.token)
-    localStorage.setItem('cv_user',  JSON.stringify(data.user))
+  async function init() {
+    const { data: { session } } = await supabase.auth.getSession()
+    user.value = session?.user || null
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      user.value = session?.user || null
+    })
   }
 
-  async function register(credentials) {
-    const { data } = await axios.post(`${API}/auth/register`, credentials)
-    token.value = data.token
-    user.value  = data.user
-    localStorage.setItem('cv_token', data.token)
-    localStorage.setItem('cv_user',  JSON.stringify(data.user))
+  async function login({ email, password }) {
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) throw error
+    user.value = data.user
   }
 
-  function logout() {
-    token.value = null
-    user.value  = null
-    localStorage.removeItem('cv_token')
-    localStorage.removeItem('cv_user')
+  async function register({ email, password, username, firstName, lastName }) {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          username,
+          first_name: firstName || username,
+          last_name: lastName || ''
+        }
+      }
+    })
+    if (error) throw error
+    user.value = data.user
   }
 
-  return { token, user, isLoggedIn, login, register, logout }
+  async function logout() {
+    await supabase.auth.signOut()
+    user.value = null
+  }
+
+  return { user, isLoggedIn, login, register, logout, init }
 })
