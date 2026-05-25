@@ -29,8 +29,6 @@ const routes = [
   { path: '/dashboard',   name: 'Dashboard',    component: Dashboard,    meta: { requiresAuth: true } },
   { path: '/cards/:id',   name: 'CardDetail',   component: CardDetail },
   { path: '/profile/:id', name: 'Profile',      component: Profile },  { path: '/deckbuilder', name: 'deck-builder', component: DeckBuilder }
-
-
 ]
 
 const router = createRouter({

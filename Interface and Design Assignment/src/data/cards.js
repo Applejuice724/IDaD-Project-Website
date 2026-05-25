@@ -1,5 +1,4 @@
 export const cards = [
-    export const cards = [
     // =========================
     // YU-GI-OH! DARK MAGICIAN CORE
     // =========================
@@ -464,8 +463,7 @@ export const cards = [
         },
 
         route: '/card/20'
-    }
-];
+    },
 
     // =========================
     // POKEMON Dummy data for testing
