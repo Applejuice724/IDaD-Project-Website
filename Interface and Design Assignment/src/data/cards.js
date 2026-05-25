@@ -59,7 +59,7 @@ export const cards = [
         name: 'Magician\'s Rod',
         cardType: 'Monster',
         type: 'Monster',
-        image: 'https://images.ygoprodeck.com/images/cards/5040556.jpg',
+        image: 'https://ms.yugipedia.com//7/72/MagiciansRod-LDS3-EN-C-1E.png',
         description: 'Search a Spell/Trap that lists Dark Magician.',
 
         stats: {
@@ -348,7 +348,7 @@ export const cards = [
         name: 'The Dark Magicians',
         cardType: 'Fusion Monster',
         type: 'Fusion Monster',
-        image: 'https://images.ygoprodeck.com/images/cards/50912458.jpg',
+        image: 'https://static.wikia.nocookie.net/yugioh/images/f/f4/TheDarkMagicians-LDS3-EN-ScR-LE.png/revision/latest?cb=20220727180437',
         description: 'Fusion of Dark Magician and Dark Magician Girl.',
 
         stats: {
@@ -373,7 +373,7 @@ export const cards = [
         name: 'Dark Magician the Dragon Knight',
         cardType: 'Fusion Monster',
         type: 'Fusion Monster',
-        image: 'https://images.ygoprodeck.com/images/cards/64332131.jpg',
+        image: 'https://static.wikia.nocookie.net/yugioh/images/6/66/DarkMagiciantheDragonKnight-GFP2-EN-UR-1E.png/revision/latest/scale-to-width-down/300?cb=20220608234105',
         description: 'Protects Spell/Trap cards.',
 
         stats: {
@@ -447,7 +447,7 @@ export const cards = [
         name: 'Selene, Queen of the Master Magicians',
         cardType: 'Link Monster',
         type: 'Link Monster',
-        image: 'https://images.ygoprodeck.com/images/cards/51454020.jpg',
+        image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.ygoprodeck.com%2Fimages%2Fcards%2F45819647.jpg&f=1&nofb=1&ipt=752f9342c8acef641009a5c4ca5439a3a06c4a771e546b222f5b9f096630b85c',
         description: 'Revives Spellcasters from the graveyard.',
 
         stats: {
@@ -474,7 +474,7 @@ export const cards = [
         game: 'Pokemon',
         name: 'Charizard',
         cardType: 'Pokemon',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstorage.googleapis.com%2Fimages.pricecharting.com%2F60629cf71073ec245daec608d05e959f3d8cfe678ea44c0a6ebdc28ed9b04007%2F1600.jpg&f=1&nofb=1&ipt=14028d675157a4f10b17689bec37ed938a3b876e144524fef98ff4302ed8419b',
         description: 'Spits fire hot enough to melt boulders.',
         stats: {
             hp: 170,
@@ -497,7 +497,7 @@ export const cards = [
         game: 'One Piece',
         name: 'Monkey D. Luffy',
         cardType: 'Leader',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcgc.chakra42.net%2Fimages%2Fone-piece-tcg-2022%2Fstraw-hat-crew-starter-deck%2FOnePiece2022-ST01-012.jpg&f=1&nofb=1&ipt=be211d82b8b265afab74c1764d33f584efd264409fe7a5ac5b59d024f4a0c385',
         description: 'Captain of the Straw Hat Pirates.',
         stats: {
             color: 'Red',
@@ -520,7 +520,7 @@ export const cards = [
         game: 'MTG',
         name: 'Black Lotus',
         cardType: 'Artifact',
-        image: 'https://via.placeholder.com/200x300',
+        image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.printingproxies.com%2Fwp-content%2Fuploads%2F2023%2F05%2F30a-525-black-lotus.png&f=1&nofb=1&ipt=226eb3a5462f12df77975b345733b984d7f27390f3de31f6cc41ba10c67c0645',
         description: 'Add three mana of any one color.',
         stats: {
             manaCost: '{0}',
