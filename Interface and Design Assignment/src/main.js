@@ -1,7 +1,17 @@
 import { createApp } from 'vue'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import './styles/main.scss'
+import { createPinia } from 'pinia'
 import App from './App.vue'
-import router from './router.js'
+import router from './router'
+import './styles/main.scss'
+import { useAuthStore } from './stores/auth'
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+const pinia = createPinia()
+
+app.use(pinia)
+app.use(router)
+
+const authStore = useAuthStore()
+authStore.init()
+
+app.mount('#app')
