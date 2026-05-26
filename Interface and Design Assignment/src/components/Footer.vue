@@ -19,14 +19,13 @@
                     <ul class="list-unstyled">
                         <li><a href="/profile" class="text-decoration-none text-muted">Profile</a></li>
                         <li><a href="/chat" class="text-decoration-none text-muted">Chat History</a></li>
-                        <li><a href="/decks" class="text-decoration-none text-muted">Deck Builder (Might be too out of scope)</a></li>                        
+                        <li><a href="/deckbuilder" class="text-decoration-none text-muted">Deck Builder</a></li>                        
                     </ul>
                 </div>
                 <div class="col-12 col-md-3 mb-3 mb-md-0">
                     <h5 class="mb-3">Resources</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="/guide" class="text-decoration-none text-muted">Grading Guide</a></li>                        
-                        <li><a href="/strategy-guides" class="text-decoration-none text-muted">Strategy Guides</a></li>
+                    <ul class="list-unstyled">                        
+                        <li><a href="/guides" class="text-decoration-none text-muted">Strategy Guides</a></li>
                         <li><a href="/news" class="text-decoration-none text-muted">News</a></li>
                         <li><a href="/faq" class="text-decoration-none text-muted">FAQ</a></li>
                     </ul>

@@ -14,6 +14,7 @@ import CardDetail   from './views/CardDetailView.vue'
 import Dashboard    from './views/DashboardView.vue'
 import Profile      from './views/ProfileView.vue'
 import Guides       from './views/GuidesView.vue'
+import DeckBuilder from './components/DeckBuilder.vue'
 
 import NewsCardView from './views/NewsCardView.vue'
 import NewsStoryView from './views/NewsStoryView.vue'
@@ -29,7 +30,8 @@ const routes = [
   { path: '/register',    name: 'Register',     component: RegisterView, meta: { guestOnly: true } },
   { path: '/dashboard',   name: 'Dashboard',    component: Dashboard,    meta: { requiresAuth: true } },
   { path: '/cards/:id',   name: 'CardDetail',   component: CardDetail },
-  { path: '/profile/:id', name: 'Profile',      component: Profile },
+  { path: '/profile/:id', name: 'Profile',      component: Profile },  
+  { path: '/deckbuilder', name: 'deck-builder', component: DeckBuilder },
   { path: '/news',        name: 'News',         component: NewsCardView},
   { path: '/news/:slug',  name: 'NewsStory',    component: NewsStoryView }
 ]
