@@ -79,7 +79,7 @@
                 <button v-if="auth.isLoggedIn && auth.user?.id === comment.user_id"
                   class="btn btn-link btn-sm text-danger p-0" @click="removeComment(comment.id)">✕</button>
               </div>
-              <p class="mb-0 mt-1">{{ comment.body }}</p>
+              <p class="mb-0 mt-1">{{ comment.content }}</p>
             </div>
           </TransitionGroup>
           <p v-if="!card.comments?.length" class="text-muted fst-italic">No comments yet!</p>
@@ -93,7 +93,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
-import { getCard, toggleLike, postComment, deleteComment, deleteCard, toggleCollection } from '../api'
+import { getCard, toggleLike, postComment, deleteComment, deleteCard, toggleCollection, getCardInteractions } from '../api'
 import { cards } from '../data/cards'
 
 const route = useRoute()
@@ -111,7 +111,8 @@ async function fetchCard() {
     const { data } = await getCard(route.params.id)
     card.value = data
   } catch {
-    // Fallback to local data if Supabase fails
+    // Fallback to local data if Supabase fails 
+    // // we are only using local cards now
     const localCard = cards.find(c => String(c.id) === String(route.params.id))
     if (localCard) {
       card.value = {
@@ -123,6 +124,14 @@ async function fetchCard() {
         like_count: localCard.popularity || 0,
         liked: false
       }
+      // I know it's inefficient but don't worry
+      const interactions = await getCardInteractions(localCard.id)
+      console.log('Card interactions:', interactions)
+      card.value.comments = interactions.comments;
+      card.value.like_count = interactions.likeCount;
+      console.log(interactions.comments)
+      console.log(card.value.comments);
+      console.log("NEXT")
     } else {
       error.value = 'Card not found.'
     }

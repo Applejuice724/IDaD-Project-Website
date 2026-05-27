@@ -18,7 +18,7 @@
         >Edit Profile</router-link>
       </div>
 
-      <h4 class="fw-bold mb-3">Cards Added ({{ cards.length }})</h4>
+      <!-- <h4 class="fw-bold mb-3">Cards Added ({{ cards.length }})</h4>
       <div v-if="cards.length === 0" class="text-muted mb-5">No cards added yet.</div>
       <div v-else class="row row-cols-2 row-cols-md-4 g-3 mb-5">
         <div v-for="card in cards" :key="card.id" class="col">
@@ -31,7 +31,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <h4 class="fw-bold mb-3">Collection ({{ collection.length }})</h4>
       <div v-if="collection.length === 0" class="text-muted">Nothing saved yet.</div>
@@ -56,7 +56,7 @@ import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import { getProfile, getUserCards, getUserCollection } from '../api'
-
+import { getCards } from '../composables/cards'
 const route = useRoute()
 const auth = useAuthStore()
 const loading = ref(true)
@@ -68,16 +68,22 @@ async function fetchProfile() {
   try {
     const [
   { data: profileData },
-  { data: cardsData },
+  // { data: cardsData },
   { data: collectionData }
 ] = await Promise.all([
   getProfile(route.params.id),
-  getUserCards(route.params.id),
+  // getUserCards(route.params.id),
   getUserCollection(route.params.id)
 ])
     profile.value = profileData
-    cards.value = cardsData
-    collection.value = collectionData
+    // cards.value = cardsData
+    console.log('Profile data:', profileData)
+    console.log('Collection data:', collectionData)
+    const cardIds = collectionData.map(item => item.item_id);
+    console.log(cardIds);
+    collection.value = getCards(cardIds);
+    console.log(collection.value);
+    // collection.value = collectionData
   } catch (e) {
     console.error(e)
   } finally {

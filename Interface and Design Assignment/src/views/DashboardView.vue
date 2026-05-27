@@ -3,9 +3,14 @@
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
       <div>
         <h2 class="fw-bold mb-0">My Dashboard</h2>
-        <p class="text-muted mb-0">Welcome back, {{ auth.user?.username }} 👋</p>
+        <p class="text-muted mb-0">Welcome back, {{ profile?.username }} 👋</p>
       </div>
       <router-link :to="{ name: 'Catalogue' }" class="btn btn-primary">+ Add New Card</router-link>
+    </div>
+    <div>
+      <textarea class="form-control mb-3" rows="3" placeholder="" v-model="profile.bio">
+      </textarea>
+      <button v-if="profile.bio !== lastSavedBio" class="btn btn-success mb-4" @click="saveBio" :disabled="!profileTextAreaActive">Save Changes</button>
     </div>
 
     <div class="row g-3 mb-5">
@@ -46,7 +51,7 @@
       <div v-for="card in myCards" :key="card.id" class="col">
         <div class="card h-100 shadow-sm card-hover"
              @click="$router.push({ name: 'CardDetail', params: { id: card.id } })">
-          <img v-if="card.image_url" :src="card.image_url" :alt="card.name"
+          <img v-if="card.image" :src="card.image" :alt="card.name"
                class="card-img-top" style="height:160px;object-fit:contain;padding:8px" />
           <div v-else class="card-img-top d-flex align-items-center justify-content-center"
                style="height:160px;background:#f7f8fa;font-size:2.5rem">🃏</div>
@@ -68,9 +73,13 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
-import { getProfile } from '../api'
-
+import { getProfile, updateProfile, getUserCollection } from '../api'
+import { getCards } from '../composables/cards';
+const profile = ref(null);
+const lastSavedBio = ref('');
+const profileTextAreaActive = ref(true);
 const auth = useAuthStore()
+auth.init();
 const router = useRouter()
 const loading = ref(true)
 const myCards = ref([])
@@ -81,22 +90,40 @@ const totalComments = computed(() => myCards.value.reduce((s, c) => s + (c.comme
 
 async function fetchProfile() {
   try {
-    const { data } = await getProfile(auth.user.id)
-    myCards.value = data.cards
-    collection.value = data.collection
+    const [{data:profileData}, {data:myCardsData}] = await Promise.all([
+      getProfile(auth.user.id),
+      getUserCollection(auth.user.id)
+    ])
+    const ids = myCardsData.map(item => item.item_id);
+    console.log(ids);
+    console.log('Profile data:', profileData)
+    console.log('My cards data:', myCardsData)
+    profile.value = profileData;
+    myCards.value = getCards(ids);
+    console.log('My cards:', myCards.value);
+    console.log(myCards.value);
+    lastSavedBio.value = profileData.bio;
+    console.log('Profile data:', profileData)
+    collection.value = []
+
   } catch (e) {
     console.error('Failed to load profile', e)
   } finally {
     loading.value = false
   }
 }
-
+async function saveBio(){
+  profileTextAreaActive.value = false;
+  await updateProfile(profile.value.id, { bio: profile.value.bio })
+  lastSavedBio.value = profile.value.bio;
+  profileTextAreaActive.value = true;
+}
 function handleLogout() {
   auth.logout()
   router.push({ name: 'Home' })
 }
 
-onMounted(fetchProfile)
+fetchProfile()
 </script>
 
 <style scoped>
