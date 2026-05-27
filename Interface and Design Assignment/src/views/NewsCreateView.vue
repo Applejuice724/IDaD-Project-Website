@@ -1,6 +1,8 @@
 <script setup>
 import {ref, onMounted, watch} from 'vue';
 import { uploadNewsStory } from '@/api';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const newsItem = ref({
     title: "Title",
     short_description: "Short Description",
@@ -21,6 +23,7 @@ async function handleUpload() {
         const concat = {...newsItem.value, slug: slug.value};
         const { data } = await uploadNewsStory(concat);
         console.log('News story uploaded:', data);
+        router.push(`/news/${slug.value}`);
     } catch (error) {
         console.error('Error uploading news story:', error);
     }
