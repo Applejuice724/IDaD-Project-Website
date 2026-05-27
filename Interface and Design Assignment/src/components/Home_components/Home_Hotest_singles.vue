@@ -16,8 +16,8 @@ const filteredCards = computed(() => {
     return hottestCards.value.filter(card =>
         card.name.toLowerCase().includes(query) ||
         card.type.toLowerCase().includes(query) ||
-        card.race.toLowerCase().includes(query) ||
-        (card.attribute && card.attribute.toLowerCase().includes(query))
+        (card.stats?.race && card.stats.race.toLowerCase().includes(query)) ||
+        (card.stats?.attribute && card.stats.attribute.toLowerCase().includes(query))
     )
 })
 
@@ -69,15 +69,15 @@ watch(perPage, () => {
           <div class="card-body">
             <h5 class="card-title">{{ card.name }}</h5>
             <p class="card-text">
-              <small class="text-muted">{{ card.type }} - {{ card.race }}</small>
+              <small class="text-muted">{{ card.type }} - {{ card.stats?.race || '' }}</small>
             </p>
             <p class="card-text">{{ card.description }}</p>
             <ul class="list-unstyled">
-              <li><strong>Popularity:</strong> {{ card.popularity }}%</li>
+              <li><strong>Popularity:</strong> {{ card.metadata?.popularity }}%</li>
             </ul>
           </div>
           <div class="card-footer text-muted">
-            Added: {{ card.dateAdded }}
+            Added: {{ card.metadata?.dateAdded }}
           </div>
         </div>
       </div>

@@ -103,3 +103,10 @@ Example:
     Implemented login form with validation and connected it to backend API.
 
 
+## FAQ
+~ "I have merged the dev into my branch and now nothing is displaying, what happened?"":
+Make a .env file int the project, copy and paste below the lines inside and it should work, if this does not work put a message into the discord to investigate further.
+VITE_SUPABASE_URL=https://vqmdlxhwweeebiccxuug.supabase.co/
+VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_JMuKTZZ-q8_A1vNVULYnhQ_cA6QXuqD
+
+

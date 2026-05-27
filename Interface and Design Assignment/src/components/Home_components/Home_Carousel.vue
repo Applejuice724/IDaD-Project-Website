@@ -7,10 +7,10 @@ import onepiece from '@/assets/Home_assests/onepiece.png'
 
 // Define the card games for the carousel
 const cardGames = [
-  { name: 'Yu-Gi-Oh!', image: yugioh, section: 'yugioh' },
-  { name: 'Magic: The Gathering', image: mtg, section: 'mtg' },
-  { name: 'Pokémon TCG', image: pokemon, section: 'pokemon' },
-  { name: 'One Piece Card Game', image: onepiece, section: 'onepiece' },
+  { name: 'Yu-Gi-Oh!', image: yugioh, gameFilter: 'Yu-Gi-Oh!' },
+  { name: 'Magic: The Gathering', image: mtg, gameFilter: 'MTG' },
+  { name: 'Pokémon TCG', image: pokemon, gameFilter: 'Pokemon' },
+  { name: 'One Piece Card Game', image: onepiece, gameFilter: 'One Piece' },
 ]
 </script>
 
@@ -33,11 +33,11 @@ const cardGames = [
       <div class="carousel-inner">
         <div
           v-for="(game, i) in cardGames"
-          :key="game.section"
+          :key="game.gameFilter"
           class="carousel-item"
           :class="{ active: i === 0 }"
         >
-          <router-link :to="{ path: '/Catalogue', hash: '#' + game.section }">
+          <router-link :to="{ name: 'Catalogue', query: { game: game.gameFilter } }">
             <div class="carousel-slide" :style="{ backgroundImage: game.image ? `url(${game.image})` : 'none' }">
               <div class="slide-overlay">
                 <h3>{{ game.name }}</h3>
