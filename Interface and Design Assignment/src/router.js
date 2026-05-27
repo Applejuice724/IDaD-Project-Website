@@ -7,6 +7,7 @@ import Catalogue   from './components/Catalogue.vue'
 import Contact     from './components/Contact.vue'
 import Events      from './components/Events.vue'
 import EventDetail from './components/Event_Components/EventDetail.vue'
+import Faq from  './components/Faq.vue'
 
 import LoginView    from './views/LoginView.vue'
 import RegisterView from './views/RegisterView.vue'
@@ -14,6 +15,7 @@ import CardDetail   from './views/CardDetailView.vue'
 import Dashboard    from './views/DashboardView.vue'
 import Profile      from './views/ProfileView.vue'
 import Guides       from './views/GuidesView.vue'
+
 
 const routes = [
   { path: '/',            name: 'Home',         component: Home },
@@ -28,6 +30,7 @@ const routes = [
   { path: '/dashboard',   name: 'Dashboard',    component: Dashboard,    meta: { requiresAuth: true } },
   { path: '/cards/:id',   name: 'CardDetail',   component: CardDetail },
   { path: '/profile/:id', name: 'Profile',      component: Profile },
+  {path: '/faq',          name: 'Faq',          component: Faq},
 ]
 
 const router = createRouter({
