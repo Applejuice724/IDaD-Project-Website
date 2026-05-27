@@ -13,31 +13,40 @@ const props = defineProps({
 
 const searchQuery = ref(props.initialQuery)
 </script>
+
+
 <template>
-<div class="row">
-    <div class="col-8">
-        <input 
-      v-model="searchQuery" 
-      @keyup.enter="router.push({ path: '/news', query: { tags: searchQuery } })" 
-      type="text" 
-      class="form-control" 
-      placeholder="Search by tag"
-    />
+  <div class="row align-items-center">
+
+    <div class="col-12 col-lg-8">
+      <input
+        v-model="searchQuery"
+        @keyup.enter="router.push({ path: '/news', query: { tags: searchQuery } })"
+        type="text"
+        class="form-control"
+        placeholder="Search by tag"
+      />
     </div>
-    <div class="col-2">
-        <button 
-      class="btn btn-primary col-12" 
-      @click="router.push({ path: '/news', query: { tags: searchQuery } })"
-    >Search</button>
+
+    <div class="col-12 col-lg-4">
+      <div class="d-flex gap-2 justify-content-center">
+
+        <button
+          class="btn bg-primary text-light flex-fill"
+          @click="router.push({ path: '/news', query: { tags: searchQuery } })"
+        >
+          Search
+        </button>
+
+        <button
+          class="btn bg-danger text-light flex-fill"
+          @click="searchQuery = ''; router.push('/news')"
+        >
+          Clear
+        </button>
+
+      </div>
     </div>
-    <div class="col-2">
-        <button 
-      class="btn bg-danger text-light col-12" 
-      @click="searchQuery = ''; router.push('/news')" 
-    >Clear</button>
-    </div>
-    </div>
-    
-    
-  
+
+  </div>
 </template>

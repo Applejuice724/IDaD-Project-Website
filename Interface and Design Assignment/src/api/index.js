@@ -82,9 +82,20 @@ export const getProfile = async (id) => {
   if (error) throw error
   return { data }
 }
+export const getUserCards = async (userId) => {
+  const { data, error } = await supabase.from('item').select('*').eq('poster_id', userId)
+  if (error) throw error
+  return { data }
+}
 
 export const updateProfile = async (id, profileData) => {
   const { data, error } = await supabase.from('public_users').update(profileData).eq('id', id).select().single()
+  if (error) throw error
+  return { data }
+}
+
+export const getUserCollection = async (userId) => {
+  const { data, error } = await supabase.from('item_like').select('item!item_id(*)').eq('user_id', userId)
   if (error) throw error
   return { data }
 }
