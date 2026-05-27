@@ -49,9 +49,9 @@
             <span v-else class="text-muted small align-self-center">
               <router-link :to="{ name: 'Login' }">Log in</router-link> to like
             </span>
-            <button v-if="auth.isLoggedIn" class="btn btn-outline-secondary" @click="handleSave">
+            <!-- <button v-if="auth.isLoggedIn" class="btn btn-outline-secondary" @click="handleSave">
               {{ saved ? '📂 Saved' : '+ Save' }}
-            </button>
+            </button> -->
             <template v-if="auth.isLoggedIn && auth.user?.id === card.created_by">
               <router-link class="btn btn-outline-primary" :to="{ name: 'Catalogue' }">✏️ Edit</router-link>
               <button class="btn btn-outline-danger" @click="handleDelete">🗑 Delete</button>
@@ -145,8 +145,17 @@ async function handleLike() {
 }
 async function submitComment() {
   if (!newComment.value.trim()) return
-  const { data } = await postComment(card.value.id, newComment.value)
-  card.value.comments.unshift(data)
+  await auth.init()
+  if (!auth.isLoggedIn) {
+    router.push({ name: 'Login' })
+    return
+  }
+  
+  const { data } = await postComment(card.value.id, auth.user.id, newComment.value)
+  const username = await auth.username() || 'Unknown';
+  const commentData = {id: data.id, content: newComment.value, created_at: data.created_at, username: username}
+  console.log(commentData);
+  card.value.comments.unshift(commentData)
   newComment.value = ''
 }
 async function removeComment(commentId) {

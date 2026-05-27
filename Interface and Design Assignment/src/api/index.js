@@ -41,7 +41,6 @@ export const deleteCard = async (id) => {
   const { error } = await supabase.from('item').delete().eq('id', id)
   if (error) throw error
 }
-
 export const toggleLike = async (itemId, userId) => {
   const { data: existing } = await supabase
     .from('item_like')

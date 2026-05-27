@@ -55,6 +55,17 @@ export const useAuthStore = defineStore('auth', () => {
     if (error) throw error
     return data.role
   }
+  async function username(){
+    await init();
+    if (!user.value) return null;
+    const { data, error } = await supabase
+      .from('public_users')
+      .select('username')
+      .eq('id', user.value.id)
+      .single()
+    if (error) throw error
+    return data.username
+  }
 
-  return { user, isLoggedIn, login, register, logout, init, role }
+  return { user, isLoggedIn, login, register, logout, init, role, username }
 })
