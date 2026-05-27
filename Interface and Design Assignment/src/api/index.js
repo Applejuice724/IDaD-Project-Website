@@ -100,6 +100,13 @@ export const getUserCollection = async (userId) => {
   return { data }
 }
 
+export const uploadNewsStory = async (storyData) => {
+  
+  const { data, error } = await supabase.from('news').insert(storyData).select().single()
+  if (error) throw error
+  return { data }
+}
+
 export const toggleCollection = async (cardId, userId) => {
   const { data: existing } = await supabase
     .from('item_like')

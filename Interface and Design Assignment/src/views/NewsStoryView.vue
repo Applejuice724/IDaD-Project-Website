@@ -3,6 +3,7 @@
     import { onMounted, ref } from 'vue';
     import NewsStory from '@/components/News_components/NewsStory.vue';
     import { useRoute } from 'vue-router';
+    import ConditionalButton from '@/components/News_components/ConditionalButton.vue';
     const route = useRoute();
     const newsItem = ref("");
     onMounted(async () => {
@@ -22,5 +23,6 @@
 <template>
   <main class="container py-4">
     <NewsStory :newsItem="newsItem" class="mb-4"/>
+    <ConditionalButton :buttonText="'Edit Story'" :buttonRoute="`/news/${newsItem.slug}/edit`" />
   </main>
 </template>

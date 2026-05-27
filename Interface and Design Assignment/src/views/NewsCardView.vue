@@ -5,7 +5,7 @@
     import NewsCard from '@/components/News_components/NewsCard.vue';
     import { watch, ref } from 'vue';
     import { useRoute } from 'vue-router';
-
+    import ConditionalButton from '@/components/News_components/ConditionalButton.vue';
     const route = useRoute();
 
     
@@ -31,12 +31,14 @@
 <main>
     <div class="container">
         
-        <div class="row mb-4 justify-content-center align-items-center border rounded">
+        <div class="row justify-content-center align-items-center border rounded">
             <h1 class="col-lg-3 col-md-6 col-sm-12">Latest News</h1>
             <TagsSearchBar class="col-lg-9 col-md-6 col-sm-12" :initialQuery="route.query.tags"/>
         </div>
-        
-        <div class="row justify-content-center">
+        <div class="row justify-content-left mt-2">
+                <ConditionalButton buttonText="Create News Story" buttonRoute="/news/create"/>
+            </div>
+        <div class="row justify-content-center mt-2">
             <div class="col-md-3 col-md-6 col-sm-12" v-for="newsItem in newsItems" :key="newsItem.slug">
                 <div class="card h-100">
                     <div class="card-body">
@@ -45,6 +47,7 @@
                 </div>
             </div>
         </div>
+            
     </div>
 </main>
 

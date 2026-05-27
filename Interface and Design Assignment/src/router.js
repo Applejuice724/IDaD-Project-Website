@@ -18,6 +18,7 @@ import DeckBuilder from './components/DeckBuilder.vue'
 
 import NewsCardView from './views/NewsCardView.vue'
 import NewsStoryView from './views/NewsStoryView.vue'
+import NewsCreateView from './views/NewsCreateView.vue'
 const routes = [
   { path: '/',            name: 'Home',         component: Home },
   { path: '/about',       name: 'About',        component: About },
@@ -33,7 +34,8 @@ const routes = [
   { path: '/profile/:id', name: 'Profile',      component: Profile },  
   { path: '/deckbuilder', name: 'deck-builder', component: DeckBuilder },
   { path: '/news',        name: 'News',         component: NewsCardView},
-  { path: '/news/:slug',  name: 'NewsStory',    component: NewsStoryView }
+  { path: '/news/:slug',  name: 'NewsStory',    component: NewsStoryView },
+  {path: '/news/create', name: 'CreateNews',   component: NewsCreateView, meta: { requiresAuth: true } }
 ]
 
 const router = createRouter({
