@@ -36,6 +36,7 @@ export const updateCard = async (id, cardData) => {
   return { data }
 }
 
+
 export const deleteCard = async (id) => {
   const { error } = await supabase.from('item').delete().eq('id', id)
   if (error) throw error
@@ -59,7 +60,7 @@ export const toggleLike = async (itemId, userId) => {
 export const postComment = async (itemId, userId, content) => {
   const { data, error } = await supabase
     .from('item_comment')
-    .insert({ item_id: itemId, user_id: userId, content })
+    .insert({ item_id: itemId, user_id: userId, content: content })
     .select('*, user:user_id(username, first_name)')
     .single()
   if (error) throw error
@@ -89,13 +90,14 @@ export const getUserCards = async (userId) => {
 }
 
 export const updateProfile = async (id, profileData) => {
+  
   const { data, error } = await supabase.from('public_users').update(profileData).eq('id', id).select().single()
   if (error) throw error
   return { data }
 }
 
 export const getUserCollection = async (userId) => {
-  const { data, error } = await supabase.from('item_like').select('item!item_id(*)').eq('user_id', userId)
+  const { data, error } = await supabase.from('item_like').select('item_id').eq('user_id', userId)
   if (error) throw error
   return { data }
 }
@@ -105,6 +107,25 @@ export const uploadNewsStory = async (storyData) => {
   const { data, error } = await supabase.from('news').insert(storyData).select().single()
   if (error) throw error
   return { data }
+}
+
+export const getCardInteractions = async (cardId) => {
+  const { count: likeCount, error } = await supabase
+    .from('item_like')
+    .select('*', { count: 'exact', head: true })
+    .eq('item_id', cardId)
+  console.log(likeCount);
+  const commentsData = await supabase
+    .from('item_comment')
+    .select('*, public_users(*)')
+    .eq('item_id', cardId);
+  const comments = commentsData.data.map(c => ({
+  ...c,
+  username: c.public_users.username
+}));
+    console.log("COMMENTS", comments)
+  if (error) throw error
+  return { likeCount, comments }
 }
 
 export const toggleCollection = async (cardId, userId) => {
