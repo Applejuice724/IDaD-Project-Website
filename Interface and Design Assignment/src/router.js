@@ -7,6 +7,7 @@ import Catalogue   from './components/Catalogue.vue'
 import Contact     from './components/Contact.vue'
 import Events      from './components/Events.vue'
 import EventDetail from './components/Event_Components/EventDetail.vue'
+import Faq from  './components/Faq.vue'
 
 import LoginView    from './views/LoginView.vue'
 import RegisterView from './views/RegisterView.vue'
@@ -18,6 +19,8 @@ import DeckBuilder from './components/DeckBuilder.vue'
 
 import NewsCardView from './views/NewsCardView.vue'
 import NewsStoryView from './views/NewsStoryView.vue'
+import NewsCreateView from './views/NewsCreateView.vue'
+import NewsEditView from './views/NewsEditView.vue'
 const routes = [
   { path: '/',            name: 'Home',         component: Home },
   { path: '/about',       name: 'About',        component: About },
@@ -33,7 +36,11 @@ const routes = [
   { path: '/profile/:id', name: 'Profile',      component: Profile },  
   { path: '/deckbuilder', name: 'deck-builder', component: DeckBuilder },
   { path: '/news',        name: 'News',         component: NewsCardView},
-  { path: '/news/:slug',  name: 'NewsStory',    component: NewsStoryView }
+  { path: '/profile/:id', name: 'Profile',      component: Profile },
+  {path: '/faq',          name: 'Faq',          component: Faq},
+  { path: '/news/:slug',  name: 'NewsStory',    component: NewsStoryView },
+  {path: '/news/create', name: 'CreateNews',   component: NewsCreateView, meta: { requiresAuth: true } },
+  {path: '/news/:slug/edit', name: 'EditNews', component: NewsEditView, meta: { requiresAuth: true } }
 ]
 
 const router = createRouter({

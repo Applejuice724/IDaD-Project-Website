@@ -13,6 +13,18 @@
           <div class="invalid-feedback">{{ v.username }}</div>
         </div>
         <div class="mb-3">
+          <label class="form-label">First Name</label>
+          <input v-model="form.firstName" type="text" class="form-control"
+            :class="{ 'is-invalid': v.firstName }" placeholder="Enter your first name" />
+          <div class="invalid-feedback">{{ v.firstName }}</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Last Name</label>
+          <input v-model="form.lastName" type="text" class="form-control"
+            :class="{ 'is-invalid': v.lastName }" placeholder="Enter your last name" />
+          <div class="invalid-feedback">{{ v.lastName }}</div>
+        </div>
+        <div class="mb-3">
           <label class="form-label">Email address</label>
           <input v-model="form.email" type="email" class="form-control"
             :class="{ 'is-invalid': v.email }" placeholder="you@example.com" />
@@ -88,7 +100,7 @@ async function handleRegister() {
   loading.value = true
   error.value = null
   try {
-    await auth.register({ ...form, firstName: form.username, lastName: form.username })
+    await auth.register({ ...form, firstName: form.firstName, lastName: form.lastName })
     router.push({ name: 'Dashboard' })
   } catch (e) {
     error.value = e.message || 'Registration failed. Please try again.'

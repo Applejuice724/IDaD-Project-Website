@@ -55,7 +55,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
-import { getProfile } from '../api'
+import { getProfile, getUserCards, getUserCollection } from '../api'
 
 const route = useRoute()
 const auth = useAuthStore()
@@ -66,10 +66,18 @@ const collection = ref([])
 
 async function fetchProfile() {
   try {
-    const { data } = await getProfile(route.params.id)
-    profile.value = data.user
-    cards.value = data.cards
-    collection.value = data.collection
+    const [
+  { data: profileData },
+  { data: cardsData },
+  { data: collectionData }
+] = await Promise.all([
+  getProfile(route.params.id),
+  getUserCards(route.params.id),
+  getUserCollection(route.params.id)
+])
+    profile.value = profileData
+    cards.value = cardsData
+    collection.value = collectionData
   } catch (e) {
     console.error(e)
   } finally {
