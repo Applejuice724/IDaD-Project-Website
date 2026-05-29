@@ -7,7 +7,7 @@ export function get_hottest_cards() {
     return {
         cards: allCards,
         hottestCards: computed(() => {
-            return [...allCards.value].sort((a, b) => b.popularity - a.popularity)
+            return [...allCards.value].sort((a, b) => b.metadata.popularity - a.metadata.popularity)
         })
     }
 }
