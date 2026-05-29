@@ -93,6 +93,11 @@ watch(() => route.query.game, (game) => {
   if (game) filterGame.value = game
 }, { immediate: true })
 
+// added a new search function for global search bar
+watch(() => route.query.search, (term) => {
+  if (term) search.value = term
+}, {immediate: true})
+
 // All unique values for filter dropdowns
 const games = computed(() => [...new Set(cards.map(c => c.game))])
 const types = computed(() => [...new Set(cards.map(c => c.type))])

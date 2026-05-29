@@ -8,6 +8,7 @@ import Contact     from './components/Contact.vue'
 import Events      from './components/Events.vue'
 import EventDetail from './components/Event_Components/EventDetail.vue'
 import Faq from  './components/Faq.vue'
+import ProfileStats from './components/ProfileStats.vue'
 
 import LoginView    from './views/LoginView.vue'
 import RegisterView from './views/RegisterView.vue'
@@ -21,6 +22,8 @@ import NewsCardView from './views/NewsCardView.vue'
 import NewsStoryView from './views/NewsStoryView.vue'
 import NewsCreateView from './views/NewsCreateView.vue'
 import NewsEditView from './views/NewsEditView.vue'
+
+
 const routes = [
   { path: '/',            name: 'Home',         component: Home },
   { path: '/about',       name: 'About',        component: About },
@@ -36,6 +39,7 @@ const routes = [
   { path: '/profile/:id', name: 'Profile',      component: Profile },  
   { path: '/deckbuilder', name: 'deck-builder', component: DeckBuilder },
   { path: '/news',        name: 'News',         component: NewsCardView},
+  { path: '/profileStats', name: 'stats',       component: ProfileStats},
   { path: '/profile/:id', name: 'Profile',      component: Profile },
   {path: '/faq',          name: 'Faq',          component: Faq},
   { path: '/news/:slug',  name: 'NewsStory',    component: NewsStoryView },

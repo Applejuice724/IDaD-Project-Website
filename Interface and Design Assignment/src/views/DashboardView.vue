@@ -13,6 +13,8 @@
       <button v-if="profile.bio !== lastSavedBio" class="btn btn-success mb-4" @click="saveBio" :disabled="!profileTextAreaActive">Save Changes</button>
     </div>
 
+    <ProfileStats v-if="!loading" :cards="myCards" :collection="collection" />
+
     <div class="row g-3 mb-5">
       <div class="col-6 col-md-3">
         <div class="stat-card">
@@ -75,6 +77,7 @@ import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import { getProfile, updateProfile, getUserCollection } from '../api'
 import { getCards } from '../composables/cards';
+import ProfileStats from '@/components/ProfileStats.vue'
 const profile = ref(null);
 const lastSavedBio = ref('');
 const profileTextAreaActive = ref(true);
@@ -109,6 +112,7 @@ async function fetchProfile() {
   } catch (e) {
     console.error('Failed to load profile', e)
   } finally {
+    console.log('collection before loading false:', collection.value)
     loading.value = false
   }
 }
