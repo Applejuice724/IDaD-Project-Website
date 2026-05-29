@@ -16,7 +16,7 @@ const gameNameMap = {
  * Each zone holds a name, optional min/max card counts, and the card array.
  * Returns an empty array for unknown games.
  *
- * @param {string} game — game identifier (e.g. 'yugioh', 'pokemon', 'mtg', 'onepiece')
+ * @param {string} game - the game key (e.g. 'yugioh', 'pokemon', etc.)
  * @returns {Array<{name: string, min?: number, max?: number, cards: Array}>}
  */
 function createDefaultZones(game) {

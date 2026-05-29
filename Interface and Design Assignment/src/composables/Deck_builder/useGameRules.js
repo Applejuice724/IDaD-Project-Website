@@ -2,7 +2,7 @@
  * Ruleset definitions for each supported game.
  * Each game key maps to an object of constraints applied during deck building.
  *
- * maxCopies — maximum number of copies of the same card allowed in a deck.
+ * maxCopies: the maximum number of copies of the same card allowed in the entire deck.
  *
  * To be extended with additional rules (deck size limits, ban lists, etc.).
  */
