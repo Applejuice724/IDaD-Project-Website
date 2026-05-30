@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/cos30043/s101580150/',
   plugins: [vue()],
   resolve: {
     alias: {

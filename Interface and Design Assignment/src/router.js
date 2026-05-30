@@ -44,7 +44,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/cos30043/s101580150/'),
   routes,
   scrollBehavior: () => ({ top: 0 })
 })
