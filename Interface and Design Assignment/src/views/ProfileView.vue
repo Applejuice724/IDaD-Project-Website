@@ -9,6 +9,7 @@
         <div>
           <h2 class="fw-bold mb-0">{{ profile.username }}</h2>
           <p class="text-muted mb-1">{{ profile.bio || 'No bio yet.' }}</p>
+          
           <small class="text-muted">Member since {{ formatDate(profile.created_at) }}</small>
         </div>
         <router-link
@@ -17,7 +18,7 @@
           class="btn btn-outline-primary btn-sm ms-auto"
         >Edit Profile</router-link>
       </div>
-
+      
       <!-- <h4 class="fw-bold mb-3">Cards Added ({{ cards.length }})</h4>
       <div v-if="cards.length === 0" class="text-muted mb-5">No cards added yet.</div>
       <div v-else class="row row-cols-2 row-cols-md-4 g-3 mb-5">
@@ -33,6 +34,7 @@
         </div>
       </div> -->
 
+      
       <h4 class="fw-bold mb-3">Collection ({{ collection.length }})</h4>
       <div v-if="collection.length === 0" class="text-muted">Nothing saved yet.</div>
       <div v-else class="row row-cols-2 row-cols-md-4 g-3">
@@ -57,6 +59,7 @@ import { useRoute } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import { getProfile, getUserCards, getUserCollection } from '../api'
 import { getCards } from '../composables/cards'
+
 const route = useRoute()
 const auth = useAuthStore()
 const loading = ref(true)

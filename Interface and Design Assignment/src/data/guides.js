@@ -99,5 +99,28 @@ export const articles = [
 
         The set launches on July 1st, with pre-orders starting June 15th. Early adopters will receive exclusive alternate art versions of two key cards.`
             
-}
+},
+{
+        id: 6,
+        title: 'advanced spell management',
+        author: 'Min',
+        category: 'Guides',
+        image: 'https://picsum.photos/800/400?6',
+        excerpt: 'Mastering the art of sequencing your activations to outplay your opponent.',
+        date: 'May 20, 2026',
+        content: `In high-level play, the game is often decided not by the strength of your monsters, but by your ability to manage the "Chain." Understanding how and when to trigger your effects is the hallmark of a master tactician.
+
+        Strategic Pillars:
+
+        1. Priority and Timing: Recognizing when you have the initiative to activate a spell or effect is crucial. Don’t rush your plays—wait for the opportune moment to force your opponent to respond first.
+
+        2. Chain Blocking: Learn to stack your activations. By layering your effects correctly, you can prevent your opponent from responding to your most critical plays, ensuring your powerful abilities resolve successfully.
+
+        3. Baiting Disruptions: Learn to identify your opponent's backrow or set responses. Often, activating a low-impact effect to "bait" a negation will clear the path for your true win condition.
+
+        4. Resource Efficiency: A complex chain can deplete your hand rapidly. Always calculate the cost-to-reward ratio of your activations. Is the board state change worth losing two cards from your hand?
+
+        Mastering these interactions will transform your gameplay from reactive to proactive. Study your sequencing, and you will find your opponents struggling to keep up with your tempo.`
+    }          
+
 ]
